@@ -17,4 +17,5 @@ class SoundsPing(Resource):
     }
 
 
+
 api.add_resource(SoundsPing, '/sounds/ping')
