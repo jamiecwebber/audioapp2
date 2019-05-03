@@ -1,7 +1,7 @@
 # services/sounds/project/api/sounds.py
 
 import os  # new
-from flask import Flask, flash, request, redirect, url_for, jsonify, send_from_directory, Blueprint, render_template
+from flask import Flask, flash, request, redirect, url_for, send_from_directory, Blueprint, render_template
 from flask_restful import Resource, Api
 from flask_sqlalchemy import SQLAlchemy  # new
 from werkzeug.utils import secure_filename
@@ -29,8 +29,10 @@ def index():
 
 @sounds_blueprint.route('/sounds', methods=['GET', 'POST'])
 def upload_file():
+	flash("here")
 	if request.method == 'POST':
 		# check if the post request has the file part
+		flash(request)
 		if 'file' not in request.files:
 			flash('No selected file')
 			return redirect(request.url)
@@ -39,6 +41,7 @@ def upload_file():
 			flash("No selected file")
 			return redirect(request.url)
 		if file:
+			flash("yougotthisfar")
 			title = request.form['title']
 			filename = secure_filename(file.filename)
 			file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)

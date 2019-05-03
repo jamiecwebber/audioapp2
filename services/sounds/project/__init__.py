@@ -2,7 +2,7 @@
 
 
 import os  # new
-from flask import Flask, flash, request, redirect, url_for, jsonify, send_from_directory
+from flask import Flask, flash, request, redirect, url_for, send_from_directory
 from flask_restful import Resource, Api
 from flask_sqlalchemy import SQLAlchemy  # new
 from werkzeug.utils import secure_filename
@@ -19,6 +19,7 @@ def create_app(script_info=None):
 
     # instantiate the app
     app = Flask(__name__)
+    app.secret_key = "super secret key"
 
     # set config
     app_settings = os.getenv('APP_SETTINGS')
@@ -39,28 +40,7 @@ def create_app(script_info=None):
 
 
 
-    @app.route('/', methods=['GET', 'POST'])
-    def upload_file():
-    	if request.method == 'POST':
-    		# check if the post request has the file part
-    		if 'file' not in request.files:
-    			flash('No selected file')
-    			return redirect(request.url)
-    		file = request.files['file']
-    		if file.filename == '':
-    			flash("No selected file")
-    			return redirect(request.url)
-    		if file:
-    			filename = secure_filename(file.filename)
-    			file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-    			return redirect(url_for('uploaded_file', filename=filename))
 
 
-    @app.route('/uploads/<filename>')
-    def uploaded_file(filename):
-        return send_from_directory(app.config['UPLOAD_FOLDER'],
-                                   filename)
-
-    
     return app
 
