@@ -1,4 +1,4 @@
-# services/users/project/config.py
+# services/sounds/project/config.py
 
 
 import os  # new

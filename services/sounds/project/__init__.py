@@ -1,11 +1,11 @@
-# services/users/project/__init__.py
+# services/sounds/project/__init__.py
 
 
 import os  # new
 from flask import Flask, flash, request, redirect, url_for, jsonify, send_from_directory
 from flask_restful import Resource, Api
 from flask_sqlalchemy import SQLAlchemy  # new
-from werkzeug.utils imort secure_filename
+from werkzeug.utils import secure_filename
 
 UPLOAD_FOLDER = './media'
 
@@ -27,10 +27,10 @@ db = SQLAlchemy(app)  # new
 class Sound(db.Model):  # new
     __tablename__ = 'sounds'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    username = db.Column(db.String(128), nullable=False)
+    title = db.Column(db.String(128), nullable=False)
     file_path = db.Column(db.String(128), nullable=False)
-    def __init__(self, username, file_path):
-        self.username = username
+    def __init__(self, title, file_path):
+        self.title = title
         self.file_path = file_path
 
 
@@ -53,7 +53,7 @@ def upload_file():
 			flash("No selected file")
 			return redirect(request.url)
 		if file:
-			filename = secure_filename(file.filename):
+			filename = secure_filename(file.filename)
 			file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 			return redirect(url_for('uploaded_file', filename=filename))
 
@@ -64,4 +64,4 @@ def uploaded_file(filename):
                                filename)
 
 
-api.add_resource(SoundsPing, '/users/ping')
+api.add_resource(SoundsPing, '/sounds/ping')
