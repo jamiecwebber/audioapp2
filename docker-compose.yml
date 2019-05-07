@@ -8,6 +8,9 @@ services:
       dockerfile: Dockerfile
     ports:
       - 5001:5000
+    volumes:
+      - './services/sounds:/usr/src/app'
+      - '/usr/src/app/node_modules'
     environment:
       - FLASK_APP=project/__init__.py
       - FLASK_ENV=development
