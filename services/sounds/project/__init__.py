@@ -6,12 +6,14 @@ from flask import Flask, flash, request, redirect, url_for, send_from_directory
 from flask_restful import Resource, Api
 from flask_sqlalchemy import SQLAlchemy  # new
 from werkzeug.utils import secure_filename
+from flask_cors import CORS
 
 UPLOAD_FOLDER = './media'
 
 
 # instantiate the db
 db = SQLAlchemy()
+cors = CORS()
 
 
 # new
@@ -28,6 +30,7 @@ def create_app(script_info=None):
 
     # set up extensions
     db.init_app(app)
+    cors.init_app(app)
 
     # register blueprints
     from project.api.sounds import sounds_blueprint
