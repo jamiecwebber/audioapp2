@@ -37,14 +37,14 @@
         </form>
         <br>
         <hr>
-          {% if users %}
+          {% if sounds %}
             <ol>
-              {% for user in users %}
-                <li>{{user.username}}</li>
+              {% for sound in sounds %}
+                <li>{{sound.title}}</li>
               {% endfor %}
             </ol>
           {% else %}
-            <p>No users!</p>
+            <p>No sounds!</p>
           {% endif %}
         </div>
       </div>
