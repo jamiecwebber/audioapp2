@@ -1,5 +1,9 @@
 .titleCard {
-	font-family: 'Vollkorn', serif;
+	padding-left: 15vw;
+	padding-top: 10vh;
+	padding-bottom: 10vh;
+	margin-top: 15vh;
+	background-color: #f5f5dc;
 }
 
 h1 {

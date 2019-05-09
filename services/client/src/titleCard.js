@@ -6,7 +6,7 @@ const TitleCard = () => {
   return(
     <section className="titleCard">
         <br/>
-        <h1 className="title">Jamie Webber</h1>
+        <h1 className="title">Jamie Christopher Webber</h1>
        
         <div className="subtitles">
           <h2 className="title">web developer</h2>
