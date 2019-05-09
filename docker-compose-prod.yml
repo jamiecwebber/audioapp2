@@ -1,0 +1,39 @@
+version: '3.7'
+
+services:
+
+  sounds:
+    build:
+      context: ./services/sounds
+      dockerfile: Dockerfile
+    expose:
+      - 5000
+    environment:
+      - FLASK_APP=project/__init__.py
+      - FLASK_ENV=production
+      - APP_SETTINGS=project.config.ProductionConfig
+      - DATABASE_URL=postgres://postgres:postgres@sounds-db:5432/sounds_dev  # new
+      - DATABASE_TEST_URL=postgres://postgres:postgres@sounds-db:5432/sounds_test  # new
+    depends_on:  # new
+      - sounds-db
+
+  sounds-db:  # new
+    build:
+      context: ./services/sounds/project/db
+      dockerfile: Dockerfile
+    expose:
+      - 5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+
+  nginx:
+    build:
+      context: ./services/nginx
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 80:80
+    depends_on:
+      - sounds
+

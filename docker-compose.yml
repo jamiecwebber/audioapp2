@@ -6,11 +6,10 @@ services:
     build:
       context: ./services/sounds
       dockerfile: Dockerfile
-    expose:
-      - 5000
     volumes:
-      - './services/sounds:/usr/src/app'
-      - '/usr/src/app/node_modules'
+    - './services/sounds:/usr/src/app'
+    ports:
+      - 5001:5000
     environment:
       - FLASK_APP=project/__init__.py
       - FLASK_ENV=development
@@ -24,8 +23,8 @@ services:
     build:
       context: ./services/sounds/project/db
       dockerfile: Dockerfile
-    expose:
-      - 5432
+    ports:
+      - 5435:5432
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres

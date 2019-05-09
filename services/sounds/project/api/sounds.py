@@ -44,7 +44,7 @@ def sounds():
 		response_object = {
 			'status': 'success',
 			'data': {
-				'sounds': [sound.to_json() for sound in Sound.query.all()]
+				'sounds': 'list of sounds here'
 			}
 		}
 		return jsonify(response_object), 200
