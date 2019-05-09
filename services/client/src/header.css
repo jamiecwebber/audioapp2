@@ -1,0 +1,11 @@
+#header {
+	height: 80px;
+	width: 100%;
+	background-color: #dddddd;
+	position: sticky;
+	top: 0px;
+	padding-left: 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}

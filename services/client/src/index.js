@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
+import Form from './form';
+import TitleCard from './titleCard'
+import Header from './header'
+import './index.css'
 
 
-// new
 class App extends Component {
   constructor() {
     super();
@@ -16,32 +19,13 @@ class App extends Component {
   }
   render() {
     return (
-      <section className="section">
-        <div className="container">
-          <div className="columns">
-            <div className="column is-one-third">
-              <br/>
-              <h1 className="title is-1">Submit a sound</h1>
-              <hr/><br/>
-              <form action="/sounds" method="POST" encType="multipart/form-data">
-          <div className="field">
-            <input
-              name="title" className="input"
-              type="text" placeholder="Enter a title" required />
-          </div>
-          <div className="field">
-            <input
-              name="file" className="input"
-              type="file" required />
-          </div>
-          <input
-            type="submit" className="button is-primary is-fullwidth"
-            value="Submit" />
-        </form>
-            </div>
-          </div>
+      <div className="fullPage">
+        <Header />
+        <div className="bodyContainer">
+
+          <TitleCard />
         </div>
-      </section>
+      </div>
     )
   }
 };
