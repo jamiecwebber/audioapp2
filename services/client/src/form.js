@@ -3,6 +3,14 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 class Form extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      title: this.props.title,
+    }
+    this.handleChange = this.handleChange.bind(this);
+    this.addSound = this.addSound.bind(this);
+  }
 
   addSound(event) {
     event.preventDefault();
@@ -18,18 +26,31 @@ class Form extends Component {
     .catch((err) => { console.log(err); });
   }
 
+  handleChange(event) {
+    const obj = {};
+    obj[event.target.name] = event.target.value;
+    this.setState(obj);
+  }
+
   render () {
     return(
-      <form action={this.addSound} encType="multipart/form-data">
+      <form onSubmit={this.addSound} encType="multipart/form-data">
         <div className="field">
           <input
-            name="title" className="input"
-            type="text" placeholder="Enter a title" required />
+            name="title" 
+            className="input"
+            type="text" 
+            placeholder="Enter a title" 
+            required
+            value = {this.state.title} 
+            onChange = {this.handleChange}/>
         </div>
         <div className="field">
           <input
-          name="file" className="input"
-          type="file" required />
+            type="file"
+            ref={(ref) => { this.uploadInput = ref; }}
+            name="file"
+            accept="audio/*"/>
         </div>
         <input
           type="submit" className="button is-primary is-fullwidth"
