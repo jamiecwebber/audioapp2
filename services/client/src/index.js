@@ -25,6 +25,7 @@ class App extends Component {
 
           <TitleCard />
         </div>
+        <Form />
       </div>
     )
   }
