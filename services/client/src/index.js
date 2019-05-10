@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 import Form from './form';
+import Player from './player'
 import TitleCard from './titleCard'
 import Header from './header'
 import './index.css'
@@ -24,6 +25,8 @@ class App extends Component {
         <div className="bodyContainer">
           <Header />
           <TitleCard />
+          <Player />
+
         </div>
       </div>
     )
