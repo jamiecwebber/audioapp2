@@ -5,7 +5,7 @@ import './titleCard.css';
 const TitleCard = () => {
   return(
     <section className="titleCard">
-        <br/>
+        <h3>welcome to the personal site of</h3>
         <h1 className="title">Jamie Christopher Webber</h1>
        
         <div className="subtitles">
