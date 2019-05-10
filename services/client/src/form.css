@@ -4,14 +4,16 @@ form {
 	width: 20vw;
 	min-width: 80px;
 	background-color: #f5f5dc;
-
+	display: flex;
+	flex-direction: column;
 }
 
 .field {
 	width: auto;
 	border: 1px solid #ffffff;
-	background-color: #ffb56b;
+	background-color: #efefef;
 	padding: 3px;
+	margin: 1px;
 }
 
 .button {
@@ -20,4 +22,5 @@ form {
 	padding: 5px;
 	border-radius: 3px;
 	background-color: #ffb56b;
+	margin: 1px;
 }

@@ -11,9 +11,7 @@
     }
 
 .fullPage {
-
-	background-image: url("images/background-score.jpg");
-	background-color: #777696;
+	background-color: #efefef;
 	opacity: .9;
 	height: 100vh;
 	background-position: center;
