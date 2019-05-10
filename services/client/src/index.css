@@ -11,18 +11,20 @@
     }
 
 .fullPage {
-	background-color: #efefef;
+	background-color: #e5f2f2;
 	opacity: .9;
 	height: 100vh;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	
+
 }
 
 .bodyContainer {
+	background-color: #fafaed;
 	margin: 0px auto;
 	width: 60%;
 	min-width: 800px;
+	min-height: 100%;
 	
 }
