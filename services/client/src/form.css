@@ -1,0 +1,23 @@
+form {
+	margin: 50px auto;
+	padding: 25px;
+	width: 20vw;
+	min-width: 80px;
+	background-color: #f5f5dc;
+
+}
+
+.field {
+	width: auto;
+	border: 1px solid #ffffff;
+	background-color: #ffb56b;
+	padding: 3px;
+}
+
+.button {
+	border: 2px solid #CF5C36;
+	color: #CF5C36;
+	padding: 5px;
+	border-radius: 3px;
+	background-color: #ffb56b;
+}

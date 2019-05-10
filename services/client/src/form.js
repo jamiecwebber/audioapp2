@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // import ReactDOM from 'react-dom';
 import axios from 'axios';
+import './form.css';
 
 class Form extends Component {
   constructor(props) {
@@ -34,28 +35,30 @@ class Form extends Component {
 
   render () {
     return(
-      <form onSubmit={this.addSound} encType="multipart/form-data">
-        <div className="field">
+      <div className="form">
+        <form onSubmit={this.addSound} encType="multipart/form-data">
+          <div className="field">
+            <input
+              name="title" 
+              className="input"
+              type="text" 
+              placeholder="Enter a title" 
+              required
+              value = {this.state.title} 
+              onChange = {this.handleChange}/>
+          </div>
+          <div className="field">
+            <input
+              type="file"
+              ref={(ref) => { this.uploadInput = ref; }}
+              name="file"
+              accept="audio/*"/>
+          </div>
           <input
-            name="title" 
-            className="input"
-            type="text" 
-            placeholder="Enter a title" 
-            required
-            value = {this.state.title} 
-            onChange = {this.handleChange}/>
-        </div>
-        <div className="field">
-          <input
-            type="file"
-            ref={(ref) => { this.uploadInput = ref; }}
-            name="file"
-            accept="audio/*"/>
-        </div>
-        <input
-          type="submit" className="button is-primary is-fullwidth"
-          value="Submit" />
-      </form>
+            type="submit" className="button"
+            value="Submit" />
+        </form>
+      </div>
     )
   }
 }
