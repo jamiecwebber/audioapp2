@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
-import Form from './form';
-import Player from './player'
-import TitleCard from './titleCard'
 import Header from './header'
+import AppRouter from './router'
 import './index.css'
 
 
@@ -21,11 +19,10 @@ class App extends Component {
   render() {
     return (
       <div className="fullPage">
-        
         <div className="bodyContainer">
           <Header />
-          <TitleCard />
-          <Player />
+          <AppRouter />
+          
 
         </div>
       </div>
