@@ -20,9 +20,9 @@ class App extends Component {
   render() {
     return (
       <div className="fullPage">
-        <Header />
+        
         <div className="bodyContainer">
-
+          <Header />
           <TitleCard />
         </div>
         <Form />
