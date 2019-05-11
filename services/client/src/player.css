@@ -1,5 +1,6 @@
 .player {
-	width: 85%;
-	margin: 0px auto;
-	margin-top: 10vh;
+	position: fixed;
+	bottom: 0px;
+	width: 60%;
+	min-width: 1000px;
 }

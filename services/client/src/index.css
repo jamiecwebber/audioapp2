@@ -17,14 +17,13 @@
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-
 }
 
 .bodyContainer {
 	background-color: #fafaed;
 	margin: 0px auto;
 	width: 60%;
-	min-width: 800px;
+	min-width: 1000px;
 	min-height: 100%;
 	
 }
