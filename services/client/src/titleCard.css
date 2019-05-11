@@ -1,33 +1,30 @@
+.home-page {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	height: 80vh;
+}
+
+
 .titleCard {
 	padding-left: 15vw;
 	padding-top: 10vh;
 	padding-bottom: 10vh;
-	margin-top: 10vh;
 	color: #ffb56b;
 	background-color: #f5f5dc;
 	box-shadow: 15px solid black;
 }
 
-h1 {
-	font-size: 36px;
-	line-height: 2;
-}
-
-h2 {
-	font-size: 24px;
-}
-
-h3 {
-	font-style: italic;
-}
-
-a {
-	text-decoration: none;
+.name-link:hover {
 	color: #ffb56b;
 }
 
-a:hover {
-	color: #CF5C36;
+.name-link {
+	color: #008080;
+}
+
+.name-text {
+	color: #008080;
 }
 
 .subtitles {

@@ -5,6 +5,7 @@ import Header from './header'
 import DevPage from './devPage'
 import SoundsPage from './soundsPage'
 import AudioPage from './audioPage'
+import ContactPage from './contactPage'
 
 function Index() {
 	return (
@@ -38,6 +39,14 @@ function Audio() {
 	);
 }
 
+function Contact() {
+	return (
+		<div className='pageContent'>
+			<ContactPage />
+		</div>
+	);
+}
+
 function AppRouter() {
 	return (
 		<Router>
@@ -48,6 +57,7 @@ function AppRouter() {
 				<Route path="/dev" component={Dev} />
 				<Route path="/music" component={Music} />
 				<Route path="/audio" component={Audio} />
+				<Route path="/contact" component={Contact} />
 			</div>
 		</Router>
 	);
