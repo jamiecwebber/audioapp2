@@ -1,8 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import TitleCard from './titleCard'
-import Player from './player'
 import Header from './header'
+import DevPage from './devPage'
+import SoundsPage from './soundsPage'
+import AudioPage from './audioPage'
 
 function Index() {
 	return (
@@ -12,12 +14,28 @@ function Index() {
 	);
 }
 
-function About() {
-	return <h2>About</h2>;
+function Dev() {
+	return (
+		<div className='pageContent'>
+			<DevPage />
+		</div>
+	);
 }
 
 function Music() {
-	return <h2>Sounds</h2>;
+	return (
+		<div className='pageContent'>
+			<SoundsPage />
+		</div>
+	);
+}
+
+function Audio() {
+	return (
+		<div className='pageContent'>
+			<AudioPage />
+		</div>
+	);
 }
 
 function AppRouter() {
@@ -27,8 +45,9 @@ function AppRouter() {
 				<Header />
 
 				<Route path="/" exact component={Index} />
-				<Route path="/about" component={About} />
+				<Route path="/dev" component={Dev} />
 				<Route path="/music" component={Music} />
+				<Route path="/audio" component={Audio} />
 			</div>
 		</Router>
 	);

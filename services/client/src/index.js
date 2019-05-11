@@ -23,8 +23,8 @@ class App extends Component {
         <div className="bodyContainer">
 
           <AppRouter />
-          
           <Player />
+          
         </div>
       </div>
     )

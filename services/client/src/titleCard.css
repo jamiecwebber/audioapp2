@@ -3,6 +3,7 @@
 	padding-top: 10vh;
 	padding-bottom: 10vh;
 	margin-top: 10vh;
+	color: #ffb56b;
 	background-color: #f5f5dc;
 	box-shadow: 15px solid black;
 }
@@ -18,6 +19,15 @@ h2 {
 
 h3 {
 	font-style: italic;
+}
+
+a {
+	text-decoration: none;
+	color: #ffb56b;
+}
+
+a:hover {
+	color: #CF5C36;
 }
 
 .subtitles {
