@@ -12,6 +12,7 @@ COPY package.json /usr/src/app/package.json
 COPY package-lock.json /usr/src/app/package-lock.json
 RUN npm ci
 RUN npm install react-scripts@2.1.8 -g --silent
+RUN npm install react-router-dom@5.0.0 -g --silent
 
 # start app
 CMD ["npm", "start"]

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 // import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './header.css'
 import logo from './images/fox-logo.png'
 
@@ -7,8 +8,17 @@ class Header extends Component {
 	render () {
 		return (
 			<div id='header'>
-				<div className="headerSections"><img className='logo' src={logo} alt=''/> <h1>Red Vixen Music</h1></div>
-				<div className="headerSections"><h2>web development</h2><h2>composition</h2><h2>audio programming</h2></div>
+				<div className="headerSections">
+					<img className='logo' src={logo} alt=''/> 
+					<Link to="/">
+						<h1 className='title'>Red Vixen Music</h1>
+					</Link>
+				</div>
+				<div className="headerSections">
+					<Link to="/dev/"><h2>web development</h2></Link>
+					<Link to="/music/"><h2>composition</h2></Link>
+					<Link to="/projects/"><h2>audio programming</h2></Link>
+				</div>
 			</div>
 		)
 	}

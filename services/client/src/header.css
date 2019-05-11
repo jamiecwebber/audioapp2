@@ -16,22 +16,24 @@
 	width: auto;
 }
 
-.headerSections h1 {
+.headerSections a, h1 {
 	margin-left: 15px;
 	font-size: 24px;
 	line-height: 1.6;
 	margin-top: 3px;
+	text-decoration: none;
+	color: #ffb56b;
 }
+
 
 .headerSections h2 {
 	margin: 15px;
 	font-size: 16px;
 }
 
-.headerSections h2:hover {
-	margin: 15px;
-	font-size: 16px;
+.headerSections a:hover, h1:hover {
 	color: #efefef;
+	text-decoration: none;
 }
 
 .headerSections {
@@ -39,4 +41,5 @@
 	justify-content: space-around;
 	align-items: center;
 	margin-right: 15px;
+	flex-direction: row;
 }
